@@ -2,9 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Title Page{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
@@ -14,6 +18,16 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div id="main">
+            <header>
+                  <img src="{{ asset('picture/inCare.svg') }}" alt="Logo inCare">
+                <nav>
+                    <a href="">Home</a>
+                    <a href="">Prescription</a>
+                    <a href="">Drug</a>
+              </nav>
+            </header>
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>

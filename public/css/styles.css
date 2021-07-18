@@ -1,0 +1,51 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+#main{
+    font-size: 1em;
+    font-family: Poppins, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+header{
+    background-color: white;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+header img{
+    width: 50%;
+    margin: 15% 0;
+}
+header nav{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     padding: 0;
+     width: 100%;
+ }
+header nav a{
+    width: 85%;
+    padding: 5% 10% 5% 5%;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    color: black;
+}
+header nav a:hover{
+    background-color: rgba(6, 142, 51, 1);
+    color: white;
+}
+#board{
+    padding: 5%;
+}
