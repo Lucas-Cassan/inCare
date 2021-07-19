@@ -36,8 +36,8 @@ header nav{
      width: 100%;
  }
 header nav a{
-    width: 85%;
-    padding: 5% 10% 5% 5%;
+    width: 80%;
+    padding: 5% 5% 5% 15%;
     transition: all .2s ease-in-out;
     text-decoration: none;
     color: black;
@@ -47,5 +47,18 @@ header nav a:hover{
     color: white;
 }
 #board{
-    padding: 5%;
+    padding: 3%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+#board #title{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+#board #content{
+    grid-row-start: 2;
+    grid-row-end: 3;
 }

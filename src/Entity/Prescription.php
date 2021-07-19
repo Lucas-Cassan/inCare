@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\DrugRepository;
+use App\Repository\PrescriptionRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=DrugRepository::class)
+ * @ORM\Entity(repositoryClass=PrescriptionRepository::class)
  */
-class Drug
+class Prescription
 {
     /**
      * @ORM\Id

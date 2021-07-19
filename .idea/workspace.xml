@@ -7,7 +7,6 @@
       <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../audrey-detoure" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../index.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../jeu" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../stark-industries" afterDir="false" />
     </list>
@@ -52,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626634138735</updated>
-      <workItem from="1626634140176" duration="7181000" />
+      <workItem from="1626634140176" duration="24655000" />
     </task>
     <servers />
   </component>

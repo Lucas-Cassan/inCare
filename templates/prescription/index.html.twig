@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}inCare - Préscription{% endblock %}
+{% block title %}inCare - Fiche de préscription médicale{% endblock %}
 
    {% block stylesheets %}
        <link rel="stylesheet" href="{{ asset('css/prescription.css') }}">
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
    {% endblock %}
 
         {% block javascripts %}
@@ -13,7 +14,110 @@
 {% block body %}
 
 <div id="board">
+    <h1 id="title">Fiche de préscription médicale</h1>
+    <div id="content">
+        {{ form_start (form,{ 'attr': {'id': 'newContrat','autocomplete':'off'} }) }}
 
+        <div class="containerForm">
+            {% if form_errors(form) %}
+                <div class="text-red-500 mb-6 text-xl">
+                    {{ form_errors(form) }}
+                </div>
+            {% endif %}
+            <div id="gauche">
+                <div class="inputRow longSolo">
+                    <div class="divInput">
+                        {{ form_label(form.doctor, 'Préscrit par', {'label_attr': {'class': 'label'}}) }}
+                        {{ form_widget(form.doctor, {'attr': {'class': 'input'}}) }}
+                    </div>
+                </div>
+
+                <div class="inputRow">
+                    <div class="divInput">
+                        {{ form_label(form.patient, 'Nom du patient', {'label_attr': {'class': 'label'}}) }}
+                        {{ form_widget(form.patient, {'attr': {'class': 'input'}}) }}
+                    </div>
+                    <div class="divInput">
+                        {{ form_label(form.drug, 'Médicament', {'label_attr': {'class': 'label'}}) }}
+                        {{ form_widget(form.drug, {'attr': {'class': 'input'}}) }}
+                    </div>
+                </div>
+
+                <div class="inputRow">
+                    <div class="divInput date">
+                        {{ form_label(form.beginning, 'Début du traitement', {'label_attr': {'class': 'label'}}) }}
+                        {{ form_widget(form.beginning, {'attr': {'class': 'input dateInput'}}) }}
+                    </div>
+                    <div class="divInput date">
+                        {{ form_label(form.end, 'Fin du traitement', {'label_attr': {'class': 'label'}}) }}
+                        {{ form_widget(form.end, {'attr': {'class': 'input dateInput'}}) }}
+                    </div>
+                </div>
+
+                <div class="inputRow long">
+                    <div class="divInput">
+                        {{ form_widget(form.morning, {'attr': {'class': 'input', 'onchange': 'javascript:morning()', 'placeholder': "Text to translate"}}) }}
+                        {{ form_label(form.morning, 'Matin', {'label_attr': {'class': 'label'}}) }}
+                    </div>
+                    <div class="divInput dosageMorning dosage">
+                        {{ form_widget(form.dosagemorning, {'attr': {'class': 'input'}}) }}
+                        {{ form_label(form.dosagemorning, 'mg', {'label_attr': {'class': 'label'}}) }}
+                    </div>
+                </div>
+
+                <div class="inputRow long">
+                    <div class="divInput">
+                        {{ form_widget(form.noon, {'attr': {'class': 'input', 'onchange': 'javascript:noon()', 'placeholder': "Text to translate"}}) }}
+                        {{ form_label(form.noon, 'Midi', {'label_attr': {'class': 'label'}}) }}
+                    </div>
+                    <div class="divInput dosageNoon dosage">
+                        {{ form_widget(form.dosagenoon, {'attr': {'class': 'input'}}) }}
+                        {{ form_label(form.dosagenoon, 'mg', {'label_attr': {'class': 'label'}}) }}
+                    </div>
+                </div>
+
+                <div class="inputRow long">
+                    <div class="divInput">
+                        {{ form_widget(form.evening, {'attr': {'class': 'input', 'onchange': 'javascript:evening()', 'placeholder': "Text to translate"}}) }}
+                        {{ form_label(form.evening, 'Soir', {'label_attr': {'class': 'label'}}) }}
+                    </div>
+                    <div class="divInput dosageEvening dosage">
+                        {{ form_widget(form.dosageevening, {'attr': {'class': 'input'}}) }}
+                        {{ form_label(form.dosageevening, 'mg', {'label_attr': {'class': 'label'}}) }}
+                    </div>
+                </div>
+            </div>
+            <div id="right">
+                <div class="divInput">
+                    {{ form_label(form.contraindication, 'Contre indication', {'label_attr': {'class': 'label'}}) }}
+                    {{ form_widget(form.contraindication, {'attr': {'class': 'input'}}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="containerSubmit">
+            {{ form_widget(form.save, {'attr': {'class':'btn'}}) }}
+        </div>
+        {{ form_end(form) }}
+
+    </div>
 </div>
+
+    <script>
+        $('.dosage').hide();
+
+        function evening() {
+            $('.dosageEvening input').val("");
+            $('.dosageEvening').toggle();
+        }
+        function noon() {
+            $('.dosageNoon input').val("");
+            $('.dosageNoon').toggle();
+        }
+        function morning(){
+            $('.dosageMorning input').val("");
+            $('.dosageMorning').toggle();
+        }
+    </script>
 
 {% endblock %}
