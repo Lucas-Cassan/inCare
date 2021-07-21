@@ -14,13 +14,11 @@ form .containerForm{
     padding: 20px;
 }
 form .containerForm #gauche{
-    overflow: hidden;
     width: 60%;
     display: flex;
     flex-wrap: wrap;
 }
 form .containerForm #right{
-    overflow: hidden;
     width: 40%;
     display: flex;
     flex-wrap: wrap;

@@ -62,3 +62,66 @@ header nav a:hover{
     grid-row-start: 2;
     grid-row-end: 3;
 }
+#list-prescription{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 0;
+    width: 100%;
+    height: 80vh;
+}
+.search{
+    border: 0;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 1em;
+    padding: 12px 2.5%;
+    width: 95%;
+    margin-bottom: 10px;
+}
+.list-row{
+    border-bottom: 3px solid #f9f9f9;
+    margin: 0;
+    padding: 0 50px;
+    grid-template-columns: 25% 25% 25% 25%;
+    height: 60px;
+    display: grid;
+}
+.list-row p{
+    width: 25%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+#tableHead{
+    border-radius: 15px 15px 0 0;
+    background-color: #089E45;
+    color: whitesmoke;
+    height: 60px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+
+    grid-template-columns: 25% 25% 25% 25%;
+
+}
+#tableHead p{
+    width: auto;
+    text-align: left;
+    display: grid;
+}
+.list{
+    background-color: white;
+    padding: 0;
+    grid-template-columns: 100%;
+    width: 100%;
+    height: 90%;
+    display: grid;
+    overflow-y: scroll;
+    margin: 0;
+    border-radius: 0 0 15px 15px;
+}
+

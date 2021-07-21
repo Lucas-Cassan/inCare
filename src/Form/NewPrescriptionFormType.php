@@ -136,11 +136,8 @@ class NewPrescriptionFormType extends AbstractType
                 ],
                 'label'=>'Contre indication',
                 'mapped'=>false,
+                'required'=>false
             ])
-
-
-
-
 
             ->add('save', SubmitType::class,[
                 'attr'=>[

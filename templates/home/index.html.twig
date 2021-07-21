@@ -6,16 +6,52 @@
    {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            {{ encore_entry_script_tags('app') }}
         {% endblock %}
-
 {% block body %}
 
     <div id="board">
         <h1 id="title">Home</h1>
         <div id="content">
+            <div id="list-prescription">
+                <input class="search" placeholder="Search" />
 
+                <div id="tableHead">
+                    <p>Nom du patient</p>
+                    <p>Médicament</p>
+                    <p>Fin du traitement</p>
+                    <p>Préscrit par</p>
+                </div>
+                <ul class="list">
+                    {% for prescription in prescriptions  %}
+{#                    <post-prescriptions data-post="{{ prescription.id }}"></post-prescriptions> #}
+                    <li class="list-row">
+                        <p class="list-patient">
+                            {{ prescription.patient }}
+                        </p>
+                        <p class="list-drug">
+                            {{ prescription.drug }}
+                        </p>
+                        <p class="list-end">
+                            {{ prescription.administration.end }}
+                        </p>
+                        <p class="list-doctor">
+                            {{ prescription.doctor }}
+                        </p>
+                    </li>
+                {% endfor %}
+                </ul>
         </div>
     </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script>
+        var options = {
+            valueNames: [ 'list-patient', 'list-drug', 'list-doctor' ]
+        };
 
+        var userList = new List('list-prescription', options);
+
+
+    </script>
 {% endblock %}
+

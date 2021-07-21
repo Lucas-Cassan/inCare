@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\PrescriptionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use DateTimeInterface;
+
 
 /**
  * @ORM\Entity(repositoryClass=PrescriptionRepository::class)
@@ -36,6 +38,11 @@ class Prescription
      * @ORM\Column(type="string", length=50)
      */
     private $doctor;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created;
 
     public function getId(): ?int
     {
@@ -89,4 +96,17 @@ class Prescription
 
         return $this;
     }
+
+    public function getCreated(): string
+    {
+        return $this->created->format('d/m/Y');
+    }
+
+    public function setCreated(DateTimeInterface $created): self
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
 }
