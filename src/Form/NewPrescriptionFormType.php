@@ -112,7 +112,7 @@ class NewPrescriptionFormType extends AbstractType
                 'label'=>'Début',
                 'mapped'=>false,
                 'days' => range(1,31),
-                'years' =>  range(date("Y") - 5, date("Y") - 0),
+                'years' =>  range(date("Y") - 0, date("Y") - 0),
                 'placeholder' => [
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',
                 ]
@@ -124,7 +124,7 @@ class NewPrescriptionFormType extends AbstractType
                 'label'=>'Fin',
                 'mapped'=>false,
                 'days' => range(1,31),
-                'years' =>  range(date("Y") - 5, date("Y") - 0),
+                'years' =>  range(date("Y") - 0, date("Y") + 5),
                 'placeholder' => [
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',
                 ]
